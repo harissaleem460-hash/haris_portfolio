@@ -31,6 +31,12 @@
     color: white;
 }
 
+#experience,
+#certifications,
+#education {
+    scroll-margin-top: 84px;
+}
+
 @media screen and (max-width: 1170px) {
     .vertical-timeline-element .vertical-timeline-element-date {
         color: rgb(39, 40, 34);

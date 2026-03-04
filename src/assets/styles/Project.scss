@@ -24,6 +24,10 @@
     border-radius: 5px;
     transition: transform .2s;
     margin: 0 auto;
+    display: block;
+    aspect-ratio: 17 / 11;
+    object-fit: cover;
+    background-color: #111723;
 }
   
 .zoom:hover {
