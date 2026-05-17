@@ -4,6 +4,18 @@
     padding: 5% 10%;
     text-align: left;
 }
+
+.project-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
   
 .projects-container .projects-grid {
     display: grid;

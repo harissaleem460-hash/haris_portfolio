@@ -150,6 +150,20 @@ const recentProjects: ProjectItem[] = [
     technology: "React + Laravel",
     theme: "architecture",
   },
+  {
+    name: "The Hash Tech",
+    url: "http://thehashtech.com/",
+    industry: "Software House",
+    technology: "Next.js + Laravel",
+    theme: "software",
+  },
+  {
+    name: "Skill Nova",
+    url: "https://apptest.skillnova.ai/",
+    industry: "HR Management Agency Saas Platfrom",
+    technology: "React.js + Node.js",
+    theme: "hr",
+  },
 ];
 
 const themePalettes: Record<ProjectTheme, ThemePalette> = {
@@ -337,7 +351,7 @@ const createProjectArt = (project: ProjectItem): string => {
       <rect x="86" y="804" width="1528" height="250" rx="20" fill="url(#panel)" />
       <text x="130" y="890" fill="#FFFFFF" font-size="84" font-weight="700" font-family="Lato, Arial, sans-serif">${safeName}</text>
       <text x="130" y="950" fill="#E2E8F0" font-size="42" font-family="Lato, Arial, sans-serif">Industry: ${safeIndustry}</text>
-      <text x="130" y="1008" fill="#E2E8F0" font-size="42" font-family="Lato, Arial, sans-serif">Technology: ${safeTechnology}</text>
+      <text x="130" y="1008" fill="#E2E8F0" font-size="42" font-family="Lato, Arial, sans-serif">Stack: ${safeTechnology}</text>
     </svg>
   `;
 
@@ -349,32 +363,50 @@ const projectsWithArt = recentProjects.map((project) => ({
   image: createProjectArt(project),
 }));
 
+const projectSections = [
+  {
+    title: "Full Stack Development Projects",
+    items: projectsWithArt.filter((project) => !project.technology.includes("WordPress")),
+  },
+  {
+    title: "No-Code Development Projects",
+    items: projectsWithArt.filter((project) => project.technology.includes("WordPress")),
+  },
+];
+
 function Project() {
   return (
     <div className="projects-container" id="projects">
       <h1>Recent Projects</h1>
-      <div className="projects-grid">
-        {projectsWithArt.map((project) => (
-          <div className="project" key={`${project.name}-${project.url}`}>
-            <a href={project.url} target="_blank" rel="noreferrer">
-              <img
-                src={project.image}
-                className="zoom"
-                alt={`${project.name} AI generated cover`}
-                width="100%"
-                loading="lazy"
-              />
-            </a>
-            <a href={project.url} target="_blank" rel="noreferrer">
-              <h2>{project.name}</h2>
-            </a>
-            <p>
-              <strong>Industry:</strong> {project.industry}
-            </p>
-            <p>
-              <strong>Technology:</strong> {project.technology}
-            </p>
-          </div>
+      <div className="project-sections">
+        {projectSections.map((section) => (
+          <section className="project-section" key={section.title}>
+            <h2>{section.title}</h2>
+            <div className="projects-grid">
+              {section.items.map((project) => (
+                <div className="project" key={`${section.title}-${project.name}-${project.url}`}>
+                  <a href={project.url} target="_blank" rel="noreferrer">
+                    <img
+                      src={project.image}
+                      className="zoom"
+                      alt={`${project.name} AI generated cover`}
+                      width="100%"
+                      loading="lazy"
+                    />
+                  </a>
+                  <a href={project.url} target="_blank" rel="noreferrer">
+                    <h2>{project.name}</h2>
+                  </a>
+                  <p>
+                    <strong>Industry:</strong> {project.industry}
+                  </p>
+                  <p>
+                    <strong>Stack:</strong> {project.technology}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
     </div>
