@@ -44,7 +44,8 @@ const technologyIconMap: Record<string, string> = {
     iOS: "https://cdn.simpleicons.org/apple/FFFFFF",
     "React Native": "https://cdn.simpleicons.org/react",
     Expo: "https://cdn.simpleicons.org/expo/FFFFFF",
-    Composer: "https://cdn.simpleicons.org/composer"
+    Composer: "https://cdn.simpleicons.org/composer",
+    Supabase: "https://cdn.simpleicons.org/supabase"
 };
 
 const expertiseSections = [
@@ -128,28 +129,25 @@ const expertiseSections = [
                 ]
             },
             {
-                title: "Blade PHP Development",
+                title: "Supabase Development",
                 description:
-                    "Building dynamic and responsive web interfaces using Laravel Blade templating engine. Skilled in reusable layouts, component-based frontend rendering, template inheritance, form handling, and integrating backend logic with clean user interface structures.",
+                    "Building fast and secure backend-powered applications using Supabase. Experienced in PostgreSQL database design, authentication, row-level security, real-time subscriptions, file storage, edge functions, and integrating Supabase with modern web applications.",
                 technologies: [
-                    "Laravel",
-                    "PHP",
-                    "HTML5",
-                    "CSS3",
-                    "Bootstrap",
+                    "Supabase",
+                    "PostgreSQL",
                     "JavaScript"
                 ],
                 stack: [
-                    "Blade PHP",
-                    "Laravel",
-                    "HTML5",
-                    "CSS3",
-                    "Bootstrap",
-                    "Template Inheritance",
-                    "Components",
-                    "Forms",
-                    "JavaScript",
-                    "Responsive Design"
+                    "Supabase",
+                    "PostgreSQL",
+                    "Authentication",
+                    "Row Level Security",
+                    "Realtime",
+                    "Storage",
+                    "Edge Functions",
+                    "REST APIs",
+                    "SQL",
+                    "JavaScript"
                 ]
             },
             {
@@ -176,21 +174,79 @@ const expertiseSections = [
                 ]
             },
             {
-                title: "Python Development",
+                title: "Express.js Development",
                 description:
-                    "Building scalable backend solutions and automation workflows using Python. Skilled in clean scripting, API integrations, object-oriented programming, data handling, and developing efficient server-side functionality for modern web and business applications.",
-                technologies: ["Python"],
+                    "Building fast and minimal backend APIs using Express.js. Experienced in routing, middleware architecture, RESTful API development, JWT authentication, request validation, error handling, and connecting databases for scalable server-side applications.",
+                technologies: ["Express.js"],
                 stack: [
-                    "Python",
-                    "Django",
-                    "Flask",
+                    "Express.js",
+                    "Node.js",
                     "REST APIs",
-                    "Automation",
-                    "Scripting",
-                    "OOP",
+                    "Routing",
+                    "Middleware",
+                    "JWT Authentication",
+                    "MongoDB",
+                    "MySQL",
+                    "Error Handling",
+                    "MVC Architecture"
+                ]
+            }
+        ]
+    },
+    {
+        title: "Mobile App Development",
+        hidden: false,
+        icon: faMobileScreenButton,
+        items: [
+            {
+                title: "React Native Development",
+                description:
+                    "Building fast and responsive mobile applications using React Native. Skilled in reusable component architecture, third-party integrations, real-time features, and delivering native-like experiences across Android and iOS platforms.",
+                technologies: [
+                    "React Native",
+                    "JavaScript",
+                    "Expo",
+                    "Redux",
+                    "Firebase",
+                    "Android",
+                    "iOS"
+                ],
+                stack: [
+                    "React Native",
+                    "JavaScript",
+                    "Expo",
+                    "Redux",
+                    "Firebase",
+                    "REST APIs",
+                    "Push Notifications",
+                    "AsyncStorage",
+                    "Android",
+                    "iOS"
+                ]
+            },
+            {
+                title: "Flutter Development",
+                description:
+                    "Developing cross-platform mobile applications using Flutter with smooth performance and modern UI design. Experienced in state management, API integrations, reusable widgets, and building scalable applications for Android and iOS devices.",
+                technologies: [
+                    "Flutter",
+                    "Dart",
+                    "Firebase",
                     "SQLite",
-                    "Pandas",
-                    "JSON Handling"
+                    "Android",
+                    "iOS"
+                ],
+                stack: [
+                    "Flutter",
+                    "Dart",
+                    "Firebase",
+                    "REST APIs",
+                    "Provider",
+                    "GetX",
+                    "SQLite",
+                    "Push Notifications",
+                    "Android",
+                    "iOS"
                 ]
             }
         ]
@@ -266,64 +322,6 @@ const expertiseSections = [
                     "Forms",
                     "Animations",
                     "Landing Pages"
-                ]
-            }
-        ]
-    },
-    {
-        title: "Mobile App Development",
-        hidden: true,
-        icon: faMobileScreenButton,
-        items: [
-            {
-                title: "Flutter Development",
-                description:
-                    "Developing cross-platform mobile applications using Flutter with smooth performance and modern UI design. Experienced in state management, API integrations, reusable widgets, and building scalable applications for Android and iOS devices.",
-                technologies: [
-                    "Flutter",
-                    "Dart",
-                    "Firebase",
-                    "SQLite",
-                    "Android",
-                    "iOS"
-                ],
-                stack: [
-                    "Flutter",
-                    "Dart",
-                    "Firebase",
-                    "REST APIs",
-                    "Provider",
-                    "GetX",
-                    "SQLite",
-                    "Push Notifications",
-                    "Android",
-                    "iOS"
-                ]
-            },
-            {
-                title: "React Native Development",
-                description:
-                    "Building fast and responsive mobile applications using React Native. Skilled in reusable component architecture, third-party integrations, real-time features, and delivering native-like experiences across Android and iOS platforms.",
-                technologies: [
-                    "React Native",
-                    "JavaScript",
-                    "Expo",
-                    "Redux",
-                    "Firebase",
-                    "Android",
-                    "iOS"
-                ],
-                stack: [
-                    "React Native",
-                    "JavaScript",
-                    "Expo",
-                    "Redux",
-                    "Firebase",
-                    "REST APIs",
-                    "Push Notifications",
-                    "AsyncStorage",
-                    "Android",
-                    "iOS"
                 ]
             }
         ]

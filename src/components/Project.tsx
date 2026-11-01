@@ -1,5 +1,23 @@
 import React from "react";
 import "../assets/styles/Project.scss";
+import threadsByHiraImg from "../assets/images_web/Threads by Hira.png";
+import prosperiqMediaImg from "../assets/images_web/Prosperiq Media.png";
+import bsaAuditsImg from "../assets/images_web/BSA Audits.png";
+import florenceApartmentsImg from "../assets/images_web/Florence Apartments.png";
+import marketingAgencyImg from "../assets/images_web/Marketing Agency.png";
+import codeDevImg from "../assets/images_web/Code Dev.png";
+import staffHiringCompanyImg from "../assets/images_web/Staff Hiring Company.png";
+import medicleWebsiteImg from "../assets/images_web/Medicle Website.png";
+import quickTechImg from "../assets/images_web/Quikers Tech.png";
+import lucentumTeamImg from "../assets/images_web/Lucentum Team.png";
+import skillNovaImg from "../assets/images_web/Skill Nova.png";
+import saberesYSaboresImg from "../assets/images_web/Saberes y Sabores.png";
+import bimaxArchitectsImg from "../assets/images_web/Bimax Architects.png";
+import theHashTechImg from "../assets/images_web/The Hash Tech.png";
+import lexorientImg from "../assets/images_web/lexorient.png";
+import storageCleanerImg from "../assets/images_web/Storage Cleaner.png";
+import studyMateAiImg from "../assets/images_web/StudyMate AI.png";
+import shamianaImg from "../assets/images_web/Shamiana.png";
 
 type ProjectTheme =
   | "commerce"
@@ -88,13 +106,6 @@ const recentProjects: ProjectItem[] = [
     theme: "healthcare",
   },
   {
-    name: "Radab",
-    url: "https://radabstore.com/",
-    industry: "E-Commerce",
-    technology: "WordPress - Custom Theme",
-    theme: "commerce",
-  },
-  {
     name: "Quick Tech",
     url: "https://quickers.tech/",
     industry: "Software House",
@@ -163,6 +174,30 @@ const recentProjects: ProjectItem[] = [
     industry: "HR Management Agency Saas Platfrom",
     technology: "React.js + Node.js",
     theme: "hr",
+  },
+];
+
+const mobileApps: ProjectItem[] = [
+  {
+    name: "Storage Cleaner",
+    url: "https://play.google.com/store/apps/details?id=com.zedex.ai.storage.cleaner.app",
+    industry: "Productivity App",
+    technology: "Android App (Google Play)",
+    theme: "software",
+  },
+  {
+    name: "StudyMate AI",
+    url: "https://play.google.com/store/apps/details?id=com.zedex.homework.helper.math.solver.app",
+    industry: "Education App",
+    technology: "Android App (Google Play)",
+    theme: "digital",
+  },
+  {
+    name: "Shamiana",
+    url: "https://play.google.com/store/apps/details?id=com.shamiana.app",
+    industry: "Wedding Hall Booking App",
+    technology: "Android App (Google Play)",
+    theme: "social",
   },
 ];
 
@@ -358,15 +393,45 @@ const createProjectArt = (project: ProjectItem): string => {
   return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 };
 
-const projectsWithArt = recentProjects.map((project) => ({
-  ...project,
-  image: createProjectArt(project),
-}));
+const projectImages: Record<string, string> = {
+  "Threads by Hira": threadsByHiraImg,
+  "Prosperiq Media": prosperiqMediaImg,
+  "BSA Audits": bsaAuditsImg,
+  "Florence Apartments": florenceApartmentsImg,
+  "Marketing Agency": marketingAgencyImg,
+  "Code Dev": codeDevImg,
+  "Staff Hiring Company": staffHiringCompanyImg,
+  "Medicle Website": medicleWebsiteImg,
+  "Quick Tech": quickTechImg,
+  "Lucentum Team": lucentumTeamImg,
+  "Skill Nova": skillNovaImg,
+  "Saberes y Sabores": saberesYSaboresImg,
+  "Bimax Architects": bimaxArchitectsImg,
+  "The Hash Tech": theHashTechImg,
+  "Lexorient": lexorientImg,
+  "Storage Cleaner": storageCleanerImg,
+  "StudyMate AI": studyMateAiImg,
+  "Shamiana": shamianaImg,
+};
+
+// Projects without a banner in images_web fall back to the generated art.
+const withArt = (projects: ProjectItem[]) =>
+  projects.map((project) => ({
+    ...project,
+    image: projectImages[project.name] ?? createProjectArt(project),
+  }));
+
+const projectsWithArt = withArt(recentProjects);
+const mobileAppsWithArt = withArt(mobileApps);
 
 const projectSections = [
   {
     title: "Full Stack Development Projects",
     items: projectsWithArt.filter((project) => !project.technology.includes("WordPress")),
+  },
+  {
+    title: "Mobile App Development",
+    items: mobileAppsWithArt,
   },
   {
     title: "No-Code Development Projects",

@@ -37,8 +37,8 @@
     transition: transform .2s;
     margin: 0 auto;
     display: block;
-    aspect-ratio: 17 / 11;
-    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
     background-color: #111723;
 }
   
